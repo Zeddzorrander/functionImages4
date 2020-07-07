@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <title></title>
+</head>
+<body>
+    <header>
+        <h1>\[\frac{dy}{dx}\]</h1>
+        <h1>Calculus I</h1>
+        <h1>\[\int_a^b{f(x)dx}\]</h1>
+    </header>
+
+    <main>
+        <article>
+            <h2>Function Images and "Nearness" - Part 4</h2>
+            <section class="directions">
+                <h3 id="h_directions">General Directions</h3>
+                <p id="p_directions">In this part, we will once again enter a restriction on the range using a center and a radius.  We will use the same function from part 3.  This time, we want to connect what we were doing in the previous parts with our intuitive definition of a limit.  In addition to entering a center and a radius for a subset of the range, we will also choose a value for \(c\) and \(L\) in \(\lim_{x \to c} f(x)\).  Otherwise, the app will function the same. </p>
+            </section>
+            <div class="container">
+                <div class="wrapper">
+                    <div id="ggbApplet"></div>
+                </div>
+                <div class="wrapper">
+                    <section class="input" id="user_inputPart1">
+                        <h3 id="h3_input1">Limit Inputs</h3>
+                        <p id="p_input1">
+                            Enter the <strong>center</strong> of the desired subset of the range:  <input id="center" placeholder="center" type="text"><br>
+                            Enter the <strong>radius</strong> of the desired subset of the range:  <input id="radius" placeholder="radius" type="text"><br>
+                            Enter the value of \(c\) in the limit:  <input id="c" placeholder="c" type="text"><br>
+                            Enter the proposed value of \(L\) in the limit: <input id="L" placeholder="L" type="text"><br>
+                            <button id="submit">Submit</button>
+                        </p>
+                    </section>
+                    <section class="output" id="feedback" style="display: none;">
+                        <h3>Feedback</h3>
+                        <p id="p_feedback"></p>
+                        <p id="p_feedbackBtns1">
+                            <button id="newDom_button">New Range</button>
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer>Created by Kevin James</footer>
+</body>
+</html>
