@@ -26,15 +26,9 @@ export function registerUpdateListener(name, callback) {
     ggbApplet.registerObjectUpdateListener(name, callback);
 }
 
-export function updateRange(center, radius) {
-    if (center == 4) {
-        ggbApplet.setValue('c', 0);
-    } else if (center == 1) {
-        ggbApplet.setValue('c', 2);
-    } else {
-        ggbApplet.setValue('c', 1);
-    }
-    ggbApplet.setValue('L', center);
+export function updateRange(radius, c, L) {
+    ggbApplet.setValue('L', L);
+    ggbApplet.setValue('c', c)
     ggbApplet.setValue('Radius', radius);
     ggbApplet.setVisible('Range', true);
 }

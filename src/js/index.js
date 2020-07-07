@@ -8,19 +8,23 @@ import Interval from './intervals';
 let ggbApp = new GGBApplet(parameters, '5.0', views);
 
 function update() {
-    const center = getInputValue('center');
+    const c = getInputValue('c');
+    const L = getInputValue('L');
     const radius = getInputValue('radius');
-    ggb.updateRange(center, radius);
+    ggb.updateRange(radius, c, L);
     ggb.domainVisible();
     ggb.pointCapture(1, 0);
     ggb.registerUpdateListener('A', updateDOM);
     ggb.registerUpdateListener('B', updateDOM);
+    updateDOM();
 }
 
 function updateDOM() {
     let a = ggb.getRoundedValue('a');
     let b = ggb.getRoundedValue('b');
-    updateFeedbackSection(a, b)
+    let c = ggb.getRoundedValue('c');
+    let L = ggb.getRoundedValue('L');
+    updateFeedbackSection(a, b, c, L)
 }
 
 function newRange() {
@@ -40,7 +44,7 @@ function handleKeyPress(e) {
 
 window.onload = function() {
     ggbApp.inject('ggbApplet', 'preferHTML5');
-    elements.center.focus();
+    elements.c.focus();
     elements.submit.addEventListener('click', update);
     elements.newBtn1.addEventListener('click', newRange);
 }
